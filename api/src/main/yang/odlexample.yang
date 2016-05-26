@@ -1,0 +1,67 @@
+module odlexample {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:odlexample";
+    prefix "odlexample";
+
+    revision "2015-01-05" {
+        description "Initial revision of odlexample model";
+    }
+    
+    rpc addApplication {
+        input {
+            leaf appId {
+                type int32;
+            }
+            leaf bandwidth {
+                type decimal64{
+                    fraction-digits 4;
+                }
+            }
+            leaf packetLoss {
+                type decimal64{
+                    fraction-digits 4;
+                }
+            }
+            leaf packetDelay {
+                type decimal64{
+                    fraction-digits 4;
+                }
+            }
+            leaf jitter {
+                type decimal64{
+                    fraction-digits 4;
+                }
+            }
+        }
+    }
+    
+    container application-registry {
+            list application-registry-entry {
+                key "appId";
+
+                leaf appId {
+                    type int32;
+                }
+                leaf packetLoss {
+                    type decimal64{
+                        fraction-digits 4;
+                    }
+                }
+                leaf packetDelay {
+                    type decimal64{
+                        fraction-digits 4;
+                    }
+                }
+                leaf jitter {
+                    type decimal64{
+                        fraction-digits 4;
+                    }
+                }
+                leaf bandwidth {
+                	type decimal64{
+                    	fraction-digits 4;
+                }
+            }
+            }
+    }
+}
