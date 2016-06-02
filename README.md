@@ -20,7 +20,7 @@ To check that our modules are running, use the following commands in the Openday
 ##Simple Example
 Start the Opendaylight with the previous commands.
 
-Install Mininet and run a simple topology, e.g. 1 switch, 2 hosts, by executing <code>sudo mn --controller remote,ip=<controller-ip> --topo single, 2</code>
+Install Mininet and run a simple topology, e.g. 1 switch, 2 hosts, by executing <code>sudo mn --controller remote,ip="sdn-controller-ip" --topo single, 2</code>
 
 Browse the [ODL user interface](http://localhost:8181/index.html) and connect with admin/admin credentials.
 

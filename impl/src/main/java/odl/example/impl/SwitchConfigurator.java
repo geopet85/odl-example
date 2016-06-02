@@ -63,7 +63,7 @@ import com.google.common.util.concurrent.JdkFutureAdapters;
 import com.google.common.util.concurrent.ListenableFuture;
 
 
-public class SwitchConfigurator implements SalFlowService {
+public class SwitchConfigurator {
 
     private static final Logger LOG = LoggerFactory.getLogger(SwitchConfigurator.class);
 
@@ -95,7 +95,7 @@ public class SwitchConfigurator implements SalFlowService {
 
     public void send(String edge_switch, String edge_nodeconnector) {
 
-        LOG.debug("Start executing RPC");
+        LOG.info("Start executing RPC");
 
         // create the flow
         Flow createdFlow = createFlow(edge_nodeconnector);
@@ -120,19 +120,19 @@ public class SwitchConfigurator implements SalFlowService {
         final AddFlowInput flow = builder.build();
 
         final String sw = edge_switch;
-        LOG.debug("onPacketReceived - About to write flow (via SalFlowService) {}", flow);
+        LOG.info("onPacketReceived - About to write flow (via SalFlowService) {}", flow);
         // add flow to sal
         ListenableFuture<RpcResult<AddFlowOutput>> result = JdkFutureAdapters
                 .listenInPoolThread(salFlowService.addFlow(flow));
         Futures.addCallback(result, new FutureCallback<RpcResult<AddFlowOutput>>() {
             @Override
             public void onSuccess(final RpcResult<AddFlowOutput> o) {
-                LOG.debug("Successful outcome.");
+                LOG.info("Successful outcome.");
             }
 
             @Override
             public void onFailure(final Throwable throwable) {
-                LOG.debug("Failure.");
+                LOG.warn("Failure.");
                 throwable.printStackTrace();
             }
         });
@@ -216,21 +216,5 @@ public class SwitchConfigurator implements SalFlowService {
                 .setFlags(new FlowModFlags(false, false, false, false, false));
 
         return flowBuilder.build();
-    }
-
-
-    @Override
-    public Future<RpcResult<RemoveFlowOutput>> removeFlow(RemoveFlowInput removeFlowInput) {
-        return null;
-    }
-
-    @Override
-    public Future<RpcResult<UpdateFlowOutput>> updateFlow(UpdateFlowInput updateFlowInput) {
-        return null;
-    }
-
-    @Override
-    public Future<RpcResult<AddFlowOutput>> addFlow(AddFlowInput addFlowInput) {
-        return null;
     }
 }
