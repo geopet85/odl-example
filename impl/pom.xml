@@ -12,7 +12,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   <parent>
     <groupId>org.opendaylight.controller</groupId>
     <artifactId>config-parent</artifactId>
-    <version>0.4.3-SNAPSHOT</version>
+    <version>0.5.1-Boron-SR1</version>
     <relativePath/>
   </parent>
 
@@ -23,9 +23,10 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   <packaging>bundle</packaging>
 
   <properties>
-    <openflow.plugin.version>0.2.3-SNAPSHOT</openflow.plugin.version>
-    <l2switch.version>0.3.3-SNAPSHOT</l2switch.version>
+    <openflow.plugin.version>0.3.1-Boron-SR1</openflow.plugin.version>
+    <l2switch.version>0.4.1-Boron-SR1</l2switch.version>
     <jung2.version>2.0.1</jung2.version>
+    <mdsal.version>1.4.1-Boron-SR1</mdsal.version>
   </properties>
 
   <dependencies>
