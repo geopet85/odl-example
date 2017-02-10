@@ -26,7 +26,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     <feature version='${project.version}'>odl-odlexample-api</feature>
     <feature version='${openflow.plugin.version}'>odl-openflowplugin-southbound</feature>
     <feature version='${openflow.plugin.version}'>odl-openflowplugin-flow-services</feature>
-    <feature version="${l2switch.version}">odl-l2switch-hosttracker</feature>
+    <feature version="${l2switch.version}">odl-l2switch-all</feature>
     <bundle>mvn:org.opendaylight.controller.thirdparty/net.sf.jung2/2.0.1</bundle>
     <bundle>mvn:odl.example/odlexample-impl/{{VERSION}}</bundle>
     <configfile finalname="${configfile.directory}/odlexample.xml">mvn:odl.example/odlexample-impl/{{VERSION}}/xml/config</configfile>
