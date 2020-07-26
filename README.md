@@ -31,4 +31,3 @@ In *operations* bullet, add an application. Then in *operational* bullet, check 
 In the Opendaylight console, execute <code>log:display | grep odlexample</code> to check that certain functions work properly when you use the REST API.
 
 In the Mininet console, execute <code>sh ovs-ofctl dump-flows s1</code> to check that a new flow rule is inserted.
-
